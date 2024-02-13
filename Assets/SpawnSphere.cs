@@ -13,7 +13,8 @@ public class SpawnSphere : MonoBehaviour
 
     void Start()
     {
-        
+        InvokeRepeating("do every seconed",1.0f);
+        //CancelInvoke("",);
     }
 
     // Update is called once per frame
@@ -23,14 +24,21 @@ public class SpawnSphere : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            this.transform.position += Vector3.forward;
+            this.transform.position += Vector3.forward ;
             var sphere = Instantiate(m_inspector);
-
-
+            
             Destroy(sphere, 1.0f);
         }
 
+        else if(Input.GetKeyDown(KeyCode.Space))
 
+        {
+
+                this.transform.position += Vector3.forward * Time.deltaTime ;
+            var sphere = Instantiate(m_inspector);
+
+             Destroy(sphere, 1.0f);
+            }
 
 
     }

@@ -12,7 +12,6 @@ public class NewBehaviourScript3 : MonoBehaviour
 
     void Awake()
     {
-        sphere = GetComponent<GameObject>();
 
 
     }
