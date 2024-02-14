@@ -13,7 +13,7 @@ public class SpawnSphere : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("do every seconed",1.0f);
+        //InvokeRepeating("do every seconed",1.0f);
         //CancelInvoke("",);
     }
 
