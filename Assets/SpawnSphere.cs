@@ -6,13 +6,14 @@ public class SpawnSphere : MonoBehaviour
 {
 
     [SerializeField] private GameObject m_inspector;
-
+    private Rigidbody m_rigidbody;
 
     // Start is called before the first frame update
 
 
     void Start()
     {
+        m_rigidbody= GetComponent<Rigidbody>();
         //InvokeRepeating("do every seconed",1.0f);
         //CancelInvoke("",);
     }
@@ -24,7 +25,7 @@ public class SpawnSphere : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            this.transform.position += Vector3.forward ;
+            m_rigidbody.velocity += Vector3.forward ;
             var sphere = Instantiate(m_inspector);
             
             Destroy(sphere, 1.0f);
@@ -36,6 +37,7 @@ public class SpawnSphere : MonoBehaviour
 
                 this.transform.position += Vector3.forward * Time.deltaTime ;
             var sphere = Instantiate(m_inspector);
+                
 
              Destroy(sphere, 1.0f);
             }
