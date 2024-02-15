@@ -5,34 +5,35 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float m_speed;
+    private Rigidbody m_rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+         m_rigidbody= GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward * m_speed * Time.deltaTime; // new Vector3(0, 0, 1)
+            m_rigidbody.velocity = Vector3.forward * m_speed; // new Vector3(0, 0, 1)
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += -Vector3.forward * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = -Vector3.forward * m_speed;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.left * m_speed;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += Vector3.right * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.right * m_speed;
         }
     }
 }

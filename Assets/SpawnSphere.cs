@@ -35,7 +35,7 @@ public class SpawnSphere : MonoBehaviour
 
         {
 
-                this.transform.position += Vector3.forward * Time.deltaTime ;
+                m_rigidbody.velocity += Vector3.forward * Time.deltaTime ;
             var sphere = Instantiate(m_inspector);
                 
 
