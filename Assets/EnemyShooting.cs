@@ -16,10 +16,9 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        
             InvokeRepeating("Shoot", 0.0f, m_shootingRate);
-        }        
+               
     }
      private void Shoot()
     {

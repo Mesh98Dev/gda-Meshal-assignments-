@@ -5,9 +5,9 @@ using UnityEngine;
 public class CollisionScribt : MonoBehaviour
 {
 
-    private void OnCollisionEnter(Collision collision)
+  /*  private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Enter: {collision.gameObject.name}");
+        Debug.Log(collision.gameObject.tag !}");
     }
 
     private void OnCollisionStay(Collision collision)
@@ -19,7 +19,7 @@ public class CollisionScribt : MonoBehaviour
     {
         Debug.Log($"Exit: {collision.gameObject.name}");
     }
-
+*/ 
 
      //Start is called before the first frame update
     void Start()

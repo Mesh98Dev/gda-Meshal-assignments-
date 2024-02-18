@@ -16,6 +16,7 @@ public class PlayerShootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if()
         if (Input.GetKeyDown(KeyCode.Space))
         {
             InvokeRepeating("Shoot", 0.0f, m_shootingRate);
