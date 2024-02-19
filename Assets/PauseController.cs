@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 
-public class PauseMenu : MonoBehaviour
+public class PauseController : MonoBehaviour
 {
-    public GameObject m_PauseMenu;
-    public bool isPaused;
+    public GameObject m_PauseController;
+    public bool IsPaused;
     // Start is called before the first frame update
    
-   void Start()
+   /* void Start()
     {
        m_PauseMenu.SetActive(false);
     }
@@ -26,21 +26,21 @@ public class PauseMenu : MonoBehaviour
         else if(isPaused)
     {
          PauseGame();
-    }
- }
-}
-   void OnMouseDown() {
-	PauseGame();
-}
+    }*/
+
+
+   //void OnMouseDown() {
+	//PauseGame();
+//}
 	
-private void PauseGame()
+public void PauseGame()
 {
-    m_PauseMenu.SetActive(true);
-	Time.timeScale = 0f;
+    IsPaused = true;
+    Time.timeScale = 0f;
 }
     public void ContinueGame()
 {
-    m_PauseMenu.SetActive(false);
+    IsPaused = false;
     Time.timeScale = 1f;
 
 }

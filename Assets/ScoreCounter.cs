@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
     
-    [SerializeField] 
+    [SerializeField] private TextMeshProUGUI m_text;
+    private int m_counter;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void IncreaseCounter()
+   {
+        ++m_counter;
+        m_text.text=m_counter.ToString();
     }
 }

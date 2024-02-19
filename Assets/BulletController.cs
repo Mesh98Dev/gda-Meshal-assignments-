@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private float m_speed;
+    
     [SerializeField] private float m_lifetime;
     [SerializeField] private string m_ignoredTag;
+    private float m_speed;
 
     private Rigidbody m_rigidbody;
 
@@ -15,6 +16,11 @@ public class BulletController : MonoBehaviour
     {
         Destroy(gameObject, m_lifetime);
         m_rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public void Init(float speed)
+    {
+        m_speed = speed;
     }
 
     // Update is called once per frame
