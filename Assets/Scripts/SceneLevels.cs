@@ -20,4 +20,8 @@ public class SceneLevels : MonoBehaviour
         Debug.Log("Button pressed");
         SceneManager.LoadScene("Enemy&Player");
     }
+     public void LoadLevel2(){
+        Debug.Log("Button pressed");
+        SceneManager.LoadScene("SampleAnd");
+    }
 }
