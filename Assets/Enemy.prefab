@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab58d82e09d27e44a77262f5d6efdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_data: {fileID: 11400000, guid: 445fe4b9f1d564630825e8a01b084290, type: 2}
+  m_healthBar: {fileID: 0}
 --- !u!54 &8104662392040737347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bullet: {fileID: 1900640801014425985, guid: 678c4d9838867524c8fcd4866592a6f1, type: 3}
-  m_shootingRate: 2
+  m_data: {fileID: 11400000, guid: 445fe4b9f1d564630825e8a01b084290, type: 2}
 --- !u!1001 &2008192344120342737
 PrefabInstance:
   m_ObjectHideFlags: 0

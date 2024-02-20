@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c6a2205f8ef4b04995c91f747948fb, type: 3}
   m_Name: RegularEnemyData
   m_EditorClassIdentifier: 
-  Health: 0
-  ShootingRate: 0
-  BulletSpeed: 0
+  Health: 5
+  ShootingRate: 2
+  BulletSpeed: 10

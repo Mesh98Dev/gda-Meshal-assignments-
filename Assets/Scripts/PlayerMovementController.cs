@@ -6,7 +6,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float m_speed;
 
-    private Rigidbody m_rigidbody;
+    private Rigidbody m_rigidbody = null;
 
     // Start is called before the first frame update
     void Start()
@@ -21,25 +21,25 @@ public class PlayerMovementController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            m_rigidbody.velocity = Vector3.forward * m_speed * Time.deltaTime ; // new Vector3(0, 0, 1)
+            m_rigidbody.velocity = Vector3.forward * m_speed * Time.fixedDeltaTime ; // new Vector3(0, 0, 1)
             moving = true;
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            m_rigidbody.velocity = -Vector3.forward * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = -Vector3.forward * m_speed * Time.fixedDeltaTime;
             moving = true;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m_rigidbody.velocity = Vector3.left * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.left * m_speed * Time.fixedDeltaTime;
             moving = true;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            m_rigidbody.velocity = Vector3.right * m_speed * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.right * m_speed * Time.fixedDeltaTime;
             moving = true;
         }
 

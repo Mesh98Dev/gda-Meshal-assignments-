@@ -4,5 +4,18 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Enemy&Player.unity
+    guid: 4bde8ff8d36e448288f73d6f6c4657aa
+  - enabled: 1
+    path: Assets/Scenes/SampleSceneCapsuleAndEenmy.unity
+    guid: 300c56db3ee2941f89abf1a0dab58f18
+  - enabled: 1
+    path: Assets/SelectLevels.unity
+    guid: 7deb47a8cef9a47438ccfa9fb68f91f7
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
