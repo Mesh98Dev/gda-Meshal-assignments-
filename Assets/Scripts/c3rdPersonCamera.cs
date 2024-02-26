@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class c3rdPersonCamera : MonoBehaviour
 { 
-    /*
+    
     public Transform target;
-    public float distance;
+    public float distance = 5;
     public float zoomSpeed;
-    // Start is called before the first frame update
+    public Vector2 angle; 
+    public Vector3 offset; 
+ /*   // Start is called before the first frame update
      void Start()
     {
         
@@ -39,12 +41,7 @@ public class c3rdPersonCamera : MonoBehaviour
         transform.LookAt(target.position);
     }
     */
-    public Transform target; 
-    public Vector2 angle; 
-    public Vector3 offset; 
-    public float distance = 5; 
-
-
+     
     private void Update()
     {
         Quaternion rotation = Quaternion.Euler(angle.x,angle.y,0); 
