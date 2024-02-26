@@ -19,6 +19,7 @@ public class c3rdPersonCamera : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         offset = Vector3.Distance(transform.position , target.position);   
         cameraRotation = transform.rotation.eulerAngles; //.y
+        
 
     } 
     private void Update()
@@ -42,6 +43,10 @@ public class c3rdPersonCamera : MonoBehaviour
         playerRotation.y = transform.rotation.eulerAngles.y;
         target.eulerAngles = playerRotation;
 
+        //Ray
+       
+
+       
 
 
         

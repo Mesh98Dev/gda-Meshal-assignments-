@@ -10,7 +10,7 @@ public class PlayerHitController : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyBullet")
         {
-            Debug.Log("Player was hit by the enemy bullet!");
+            //Debug.Log("Player was hit by the enemy bullet!");
         }
     }
 }
