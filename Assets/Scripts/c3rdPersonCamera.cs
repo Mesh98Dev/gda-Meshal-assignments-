@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class c3rdPersonCamera : MonoBehaviour
-{
+{ 
+    /*
     public Transform target;
     public float distance;
     public float zoomSpeed;
     // Start is called before the first frame update
-    /* void Start()
+     void Start()
     {
         
-    }*/
+    } 
 
     // Update is called once per frame
     void Update()
@@ -24,7 +25,9 @@ public class c3rdPersonCamera : MonoBehaviour
         distance = Mathf.Clamp(distance, 2f, 10f); 
         //update the camera position based on the new distance
         UpdateCameraPosition();
-    } 
+    }   
+   
+
     void UpdateCameraPosition()
     {
         //calcuate the new camera position based on the target andd the distance
@@ -35,4 +38,18 @@ public class c3rdPersonCamera : MonoBehaviour
         //make the camera look at the target
         transform.LookAt(target.position);
     }
-}
+    */
+    public Transform target; 
+    public Vector2 angle; 
+    public Vector3 offset; 
+    public float distance = 5; 
+
+
+    private void Update()
+    {
+        Quaternion rotation = Quaternion.Euler(angle.x,angle.y,0); 
+        Vector3 position = rotation * new Vector3(0, 0, -distance) + target.position + offset;
+
+        transform.position = position;
+        transform.rotation = rotation;
+}}
