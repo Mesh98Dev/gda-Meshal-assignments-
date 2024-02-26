@@ -10,7 +10,7 @@ public class BulletController : MonoBehaviour
     private PlayerMovementController m_player;
     private Quaternion m_quat;
     private bool m_followPlayer;
-    private float m_speed;
+    public float m_speed;
 
     private Rigidbody m_rigidbody;
 
