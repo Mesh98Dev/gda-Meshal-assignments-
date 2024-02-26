@@ -30,11 +30,19 @@ public class c3rdPersonCamera : MonoBehaviour
             
            cameraRotation.y +=  mouseX ;  
         }
-       
+
+       //rotate camera
         transform.eulerAngles = cameraRotation;       
         Vector3 cameraLookDirection = Quaternion.Euler(cameraRotation) * Vector3.forward;
+        //position camera
         transform.position = -cameraLookDirection * offset + target.position;
-        
+
+        //rotate player
+        Vector3 playerRotation = target.eulerAngles;
+        playerRotation.y = transform.rotation.eulerAngles.y;
+        target.eulerAngles = playerRotation;
+
+
 
         
         //rotation * new Vector3(0, 0, -distance) + target.position + offset;
