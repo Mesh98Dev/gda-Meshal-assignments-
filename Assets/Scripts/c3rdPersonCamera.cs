@@ -6,16 +6,40 @@ public class c3rdPersonCamera : MonoBehaviour
 { 
     
     public Transform target;
-    public float distance = 5;
-    public float zoomSpeed;
-    public Vector2 angle; 
-    public Vector3 offset; 
- /*   // Start is called before the first frame update
+    //public float distance = 5;// distance
+    //public float zoomSpeed;
+    //public Vector2 angle; 
+    public float offset; //vector3
+    public Vector3 cameraRotation; //distance
+
+    
+    // Start is called before the first frame update
      void Start()
     {
-        
-    } 
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        offset = Vector3.Distance(transform.position , target.position);   
+        cameraRotation = transform.rotation.eulerAngles; //.y
 
+    } 
+    private void Update()
+    {  
+        float mouseX = Input.GetAxis("Mouse X");
+
+        if(mouseX != 0)
+        {
+            
+           cameraRotation.y +=  mouseX ;  
+        }
+       
+        transform.eulerAngles = cameraRotation;       
+        Vector3 cameraLookDirection = Quaternion.Euler(cameraRotation) * Vector3.forward;
+        transform.position = -cameraLookDirection * offset + target.position;
+        
+
+        
+        //rotation * new Vector3(0, 0, -distance) + target.position + offset;
+    }
+/*
     // Update is called once per frame
     void Update()
     {
@@ -40,8 +64,7 @@ public class c3rdPersonCamera : MonoBehaviour
         //make the camera look at the target
         transform.LookAt(target.position);
     }
-    */
-     
+       
     private void Update()
     {
         Quaternion rotation = Quaternion.Euler(angle.x,angle.y,0); 
@@ -49,4 +72,7 @@ public class c3rdPersonCamera : MonoBehaviour
 
         transform.position = position;
         transform.rotation = rotation;
-}}
+}*/
+
+
+}
