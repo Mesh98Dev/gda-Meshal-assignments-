@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-    
     [SerializeField] private TextMeshProUGUI m_text;
+
     private int m_counter;
-    // Start is called before the first frame update
+
     public void IncreaseCounter()
-   {
+    {
         ++m_counter;
-        m_text.text=m_counter.ToString();
+        m_text.text = m_counter.ToString();
     }
 }

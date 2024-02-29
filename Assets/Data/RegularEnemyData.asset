@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c6a2205f8ef4b04995c91f747948fb, type: 3}
+  m_Script: {fileID: 11500000, guid: c21a73e76e0b6f1429dce713b92edad8, type: 3}
   m_Name: RegularEnemyData
   m_EditorClassIdentifier: 
-  Health: 5
   ShootingRate: 2
   BulletSpeed: 10
