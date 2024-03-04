@@ -8,4 +8,5 @@ public class EnemyData : ScriptableObject
     public float ShootingRate;
     public float BulletSpeed;
     public bool AutoAim;
+    
 }

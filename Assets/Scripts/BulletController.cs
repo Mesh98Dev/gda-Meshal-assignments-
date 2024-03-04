@@ -12,12 +12,14 @@ public class BulletController : MonoBehaviour
     private PlayerMovementController m_player;
     private Quaternion m_quat;
     private bool m_followPlayer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, m_lifetime);
         m_rigidbody = GetComponent<Rigidbody>();
+       
     }
 
     public void Init(float speed, bool lookAtPlayer, bool followPlayer)
@@ -48,6 +50,7 @@ public class BulletController : MonoBehaviour
     {
         if (collision.gameObject.tag != m_ignoredTag)
         {
+            
             Destroy(gameObject);
         }
     }

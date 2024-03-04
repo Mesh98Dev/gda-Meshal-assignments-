@@ -7,6 +7,8 @@ public class EnemyShootingController : MonoBehaviour
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private EnemyData m_data;
      public bool ShootOnStart=true;
+     //AudioSource m_EnemyHitSource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,7 @@ public class EnemyShootingController : MonoBehaviour
         if (ShootOnStart)
         {
             StartShooting();
+            //m_EnemyHitSource = GetComponent<AudioSource>();
             }
     }
 
@@ -39,5 +42,7 @@ public class EnemyShootingController : MonoBehaviour
     {
         GameObject newBullet = Instantiate(m_bullet, transform.position + Vector3.up, Quaternion.identity);
         newBullet.GetComponent<BulletController>().Init(m_data.BulletSpeed, true, m_data.AutoAim);
+        //m_EnemyHitSource.Play();
+        
     }
 }

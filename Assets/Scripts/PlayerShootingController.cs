@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerShootingController : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerShootingController : MonoBehaviour
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private float m_shootingRate;
     [SerializeField] private float m_bulletSpeed;
+    [SerializeField] AudioSource  m_shootingSource;
 
     private PauseController m_pauseController;
 
@@ -17,6 +19,9 @@ public class PlayerShootingController : MonoBehaviour
     void Start()
     {
         m_pauseController = FindObjectOfType<PauseController>();
+        
+        m_shootingSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class PlayerShootingController : MonoBehaviour
     {
         if (!m_pauseController.IsPaused)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown((int)MouseButton.Left))
             {
                  m_animator.SetTrigger("Shoot");
                 //InvokeRepeating("Shoot", 0.0f, m_shootingRate);
@@ -41,5 +46,6 @@ public class PlayerShootingController : MonoBehaviour
     {
         GameObject newBullet = Instantiate(m_bullet, transform.position, Quaternion.identity);
         newBullet.GetComponent<BulletController>().Init(m_bulletSpeed, false, false);
+        m_shootingSource.Play();
     }
 }

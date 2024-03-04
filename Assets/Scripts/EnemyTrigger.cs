@@ -7,14 +7,23 @@ using UnityEngine;
 public class EnemyTrigger : MonoBehaviour
 {
     [SerializeField] private List<EnemyController> m_enemies;
+    
+     AudioSource m_EnemyHitSource;
+
     private bool m_activated = false;
+    
 
     private void Awake()
     {
+        m_EnemyHitSource = GetComponent<AudioSource>();
+        
         foreach (EnemyController enemy in m_enemies)
         {
             enemy.GetComponent<EnemyShootingController>().ShootOnStart = false ;   
             enemy.GetComponent<Rigidbody>().isKinematic = true ;
+            
+            
+            
         }
     }
    private void OnTriggerEnter(Collider other)
@@ -34,6 +43,7 @@ public class EnemyTrigger : MonoBehaviour
                     if (Physics.Raycast(pos, Vector3.down, out info))
                     {
                         pos.y = info.point.y+1;
+                        m_EnemyHitSource.Play();
                         
                     }
                     
@@ -41,7 +51,10 @@ public class EnemyTrigger : MonoBehaviour
                     .OnComplete(
                         ()  =>   {
                             enemy.GetComponent<EnemyShootingController>().StartShooting();
+                            
+                            
                                  }
+                                 
                             ));
                     
                 }

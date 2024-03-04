@@ -7,11 +7,19 @@ public class EnemyController : MonoBehaviour
 {
     private ScoreCounter m_scoreCounter;
 
+    AudioSource m_EnemyHitSource;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         m_scoreCounter = FindObjectOfType<ScoreCounter>();
         //StartCoroutine(MovementCoroutine());
+       
+       m_EnemyHitSource = GetComponent<AudioSource>();
+
+        
+
     }
 
     private IEnumerator MovementCoroutine()
@@ -49,8 +57,16 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
+            //m_EnemyHitSource.Play();
+
             m_scoreCounter.IncreaseCounter();
+           
+         
+            Instantiate(myAudioPlayerPewfab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
+    
+            
         }
     }
 }
