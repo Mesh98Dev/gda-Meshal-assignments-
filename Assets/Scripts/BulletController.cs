@@ -12,6 +12,7 @@ public class BulletController : MonoBehaviour
     private PlayerMovementController m_player;
     private Quaternion m_quat;
     private bool m_followPlayer;
+     [SerializeField] GameObject enemyHitSoundPlayer;
     
 
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class BulletController : MonoBehaviour
             m_player = FindObjectOfType<PlayerMovementController>();
             m_quat = Quaternion.LookRotation(m_player.transform.position - transform.position);
             m_followPlayer = followPlayer;
+            
         }
     }
 
@@ -50,7 +52,8 @@ public class BulletController : MonoBehaviour
     {
         if (collision.gameObject.tag != m_ignoredTag)
         {
-            
+            var soundHit = Instantiate( enemyHitSoundPlayer, transform.position, Quaternion.identity);
+            Destroy(soundHit,2f);
             Destroy(gameObject);
         }
     }

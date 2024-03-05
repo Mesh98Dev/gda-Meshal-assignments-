@@ -8,14 +8,14 @@ public class EnemyTrigger : MonoBehaviour
 {
     [SerializeField] private List<EnemyController> m_enemies;
     
-     AudioSource m_EnemyHitSource;
+     // AudioSource m_EnemyHitSource;
 
     private bool m_activated = false;
     
 
     private void Awake()
     {
-        m_EnemyHitSource = GetComponent<AudioSource>();
+        //m_EnemyHitSource = GetComponent<AudioSource>();
         
         foreach (EnemyController enemy in m_enemies)
         {
@@ -43,7 +43,7 @@ public class EnemyTrigger : MonoBehaviour
                     if (Physics.Raycast(pos, Vector3.down, out info))
                     {
                         pos.y = info.point.y+1;
-                        m_EnemyHitSource.Play();
+                       // m_EnemyHitSource.Play();
                         
                     }
                     

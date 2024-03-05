@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,13 @@ public class EnemyController : MonoBehaviour
 {
     private ScoreCounter m_scoreCounter;
 
-    AudioSource m_EnemyHitSource;
-    
+   // private AudioSource m_EnemyHitSource;
+    //private GameObject MyAudioPlayerPrefab;
+  
+  
+    //EnemyHitAudio enemyHitSoundPlayer;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +22,9 @@ public class EnemyController : MonoBehaviour
         m_scoreCounter = FindObjectOfType<ScoreCounter>();
         //StartCoroutine(MovementCoroutine());
        
-       m_EnemyHitSource = GetComponent<AudioSource>();
+       //m_EnemyHitSource = GetComponent<AudioSource>();
+       
+       //myAudioPlayer = FindObjectOfType<EnemyHitAudio>(MyAudioPlayerPrefab)
 
         
 
@@ -61,8 +69,9 @@ public class EnemyController : MonoBehaviour
 
             m_scoreCounter.IncreaseCounter();
            
+         //myAudioPlayerPrefab
          
-            Instantiate(myAudioPlayerPewfab, transform.position, Quaternion.identity);
+            //var soundHit = Instantiate( enemyHitSoundPlayer, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
     
